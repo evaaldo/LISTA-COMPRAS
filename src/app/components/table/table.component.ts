@@ -17,12 +17,20 @@ import { v4 as uuidv4 } from 'uuid';
 export class TableComponent implements OnInit {
 
   productsList: Product[] = [];
+  textFilter: string = "";
 
   constructor(private localStorage: LocalStorageService) {}
 
   ngOnInit(): void {
     this.loadProducts();
     console.log(this.productsList);
+  }
+
+  filteredProducts(): Product[] {
+    return this.productsList.filter(product => {
+      const filterProduct = this.textFilter ? product.productName.toLowerCase().includes(this.textFilter.toLowerCase()) : true;
+      return filterProduct;
+    })
   }
 
   addProduct() {
