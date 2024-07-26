@@ -33,6 +33,33 @@ export class TableComponent implements OnInit {
     })
   }
 
+  exportCSV(): void {
+    const data = this.productsList;
+    const replacer = (key: string, value: any) => (value === null || value === "" ? "S/V" : value);
+    const header = Object.keys(data[0]) as Array<keyof Product>;
+    const csv = data.map(row =>
+      header.map(fieldName => JSON.stringify(row[fieldName], replacer)).join(",")
+    );
+    csv.unshift(header.join(','));
+    const csvArray = csv.join('\r\n');
+
+    const a = document.createElement("a");
+    const blob = new Blob([csvArray], { type: "text/csv" });
+    const url = window.URL.createObjectURL(blob);
+
+    a.href = url;
+    a.download = "LISTA DE COMPRAS.csv";
+    a.click();
+    window.URL.revokeObjectURL(url);
+    a.remove;
+
+    Swal.fire({
+      title: "Exportação realizada",
+      text: "Sua lista de compras foi baixada em CSV",
+      icon: "success"
+    });
+  }
+
   addProduct() {
     Swal.fire({
       title: "Add a Product",
