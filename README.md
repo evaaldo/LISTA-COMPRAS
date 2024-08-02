@@ -1,6 +1,7 @@
 <h1>Lista de Compras</h1>
 
 <h3>Objetivo:</h3>
+<p>Organização e registro por planilha de gastos com alimentação feitos em determinado período de tempo.</p>
 
 <h3>Ferramentas:</h3>
 
