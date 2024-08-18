@@ -8,7 +8,7 @@
 <li>Angular</li>
 </ul>
 <h3>Onde acessar:</h3>
-<p>O sistema não possui acesso para não serem gastos recursos com a hospedagem do mesmo. Mas basta clonar o repositório, utilizar o comando NPM Install e rodar para que possa ser acessado da máquina local</p>
+<p>O sistema não possui acesso para não serem gastos recursos com a hospedagem do mesmo. Mas basta clonar o repositório, utilizar o comando NPM Install e rodar para que possa ser acessado da máquina local.</p>
 
 <h3>Imagens:</h3>
 
